@@ -24,8 +24,10 @@ class CurlParser {
     final request = CurlRequest();
 
     // Normalize the command by ensuring spaces after options
-    var normalizedCommand =
-    curlCommand.replaceAll(RegExp(r'-([a-zA-Z])([^ ])'), r'-$1 $2').replaceAll("\n", ' ').replaceAll("\t", ' ');
+    var normalizedCommand = curlCommand
+        .replaceAll(RegExp(r'-([a-zA-Z])([^ ])'), r'-$1 $2')
+        .replaceAll("\n", ' ')
+        .replaceAll("\t", ' ');
 
     // Remove 'curl' command if present at the beginning
     if (normalizedCommand.trim().startsWith('curl')) {
