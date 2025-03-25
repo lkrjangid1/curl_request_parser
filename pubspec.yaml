@@ -1,6 +1,6 @@
 name: curl_request_parser
 description: A Dart package for parsing curl commands into structured requests and generating Dart HTTP code.
-version: 1.0.0
+version: 1.0.1
 repository: https://github.com/lkrjangid1/curl_request_parser
 
 environment:
