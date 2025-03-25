@@ -25,7 +25,7 @@ class CurlParser {
 
     // Normalize the command by ensuring spaces after options
     var normalizedCommand =
-        curlCommand.replaceAll(RegExp(r'-([a-zA-Z])([^ ])'), r'-$1 $2');
+    curlCommand.replaceAll(RegExp(r'-([a-zA-Z])([^ ])'), r'-$1 $2').replaceAll("\n", ' ').replaceAll("\t", ' ');
 
     // Remove 'curl' command if present at the beginning
     if (normalizedCommand.trim().startsWith('curl')) {
@@ -45,7 +45,7 @@ class CurlParser {
         if (token.startsWith("'") || token.startsWith('"')) {
           token = token.substring(1, token.length - 1);
         }
-        request.url = token;
+        request.url = token.replaceAll("\"", '').replaceAll('\'', '');
         continue;
       }
 
