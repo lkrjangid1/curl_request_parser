@@ -1,6 +1,8 @@
 import 'curl_request.dart';
 
 /// A utility class to parse curl commands into [CurlRequest] objects.
+///
+/// Parse all params https://gist.github.com/eneko/dc2d8edd9a4b25c5b0725dd123f98b10
 class CurlParser {
   /// Parse a curl command string into a [CurlRequest] object.
   ///
